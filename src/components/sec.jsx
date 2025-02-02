@@ -23,9 +23,9 @@ const Test = ()=>{
         <h1 class="text-4xl font-bold">Join a career-changing bootcamp</h1>
         <p class="text-gray-600 mt-2">Our transformative training courses have helped thousands launch new careers in tech.</p>
         <div class="flex justify-center gap-4 text-red-600 mt-4 font-medium">
-            <span>&#10004; 200-400 hours</span>
+            <span>&#10004; 300-400 hours</span>
             <span>&#10004; Live classes</span>
-            <span>&#10004; Flexible - 2 to 7 months</span>
+            <span>&#10004; Flexible - 24 to 7 months</span>
             <span>&#10004; On site or online</span>
         </div>
     </div>
