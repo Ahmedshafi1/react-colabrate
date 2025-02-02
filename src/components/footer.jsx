@@ -57,10 +57,10 @@ const Footer = () => {
         <p>&copy; 2025 Le Wagon, Inc. All rights reserved.</p>
         <div className="flex justify-center space-x-4 mt-4">
           <a href="#" className="hover:opacity-75">LinkedIn</a>
-          <a href="#" className="hover:opacity-75">Facebook</a>
+          <a href="https://www.facebook.com/mohamed.cali.3154" className="hover:opacity-75">Facebook</a>
           <a href="#" className="hover:opacity-75">YouTube</a>
           <a href="#" className="hover:opacity-75">Meetup</a>
-          <a href="#" className="hover:opacity-75">GitHub</a>
+          <a href="https://github.com/Ahmedshafi1" className="hover:opacity-75">GitHub</a>
         </div>
       </div>
     </footer>
