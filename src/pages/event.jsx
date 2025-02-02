@@ -1,144 +1,109 @@
 
-import img from "../assets/one.webp"
-import Footer from "../components/footer"
-import Header from "../components/header"
+import img1 from "../assets/one.webp";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
-const Next = ()=>{
-    return <>
-    <Header/>
-    <div className="bg-amber-100 flex h-80 justify-between px-20 py-10">
-        <div>
-            <h1 className="text-red-500 font-semibold">.Live events</h1>
-            <h1 className="font-semibold text-3xl pt-5 pb-3">Explore our live events, <br /> talks and free workshops</h1>
-            <p className="w-80">Jump into a free workshop on UX design or data analytics, attend our students' demo days or join us for an interactive info session and find out more about Le Wagon.</p>
+const Next = () => {
+  return (
+    <>
+    <Header />
+
+
+    <div className="flex flex-col lg:flex-row bg-orange-100 max-w-[1130px] h-auto md:h-[400px] mx-auto mt-5 rounded-lg p-5">
+        {/* Left Side */}
+        <div className="w-full lg:w-[50%] p-5">
+            <h2 className="text-2xl text-red-600">Live Events</h2>
+            <h1 className="font-bold text-3xl md:text-4xl pt-5">
+                Explore Our Live events, talks and free workshops
+            </h1>
+            <p className="pt-5 text-sm md:text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis blanditiis suscipit. Corporis, voluptatibus placeat!
+            </p>
         </div>
 
-        <div>
-            <img className="w-80 rounded-lg" src={img} alt="" />
-        </div>
-    </div>
-
-    {/*  */}
-<div className=" flex justify-between px-32 pt-10">
-    <div>
-        <h1 className="font-semibold text-3xl">Filters</h1>
-    </div>
-
-    <div>
-        <h1 className="font-semibold text-3xl">Events that match your search</h1>
-    </div>
-    </div>
-
-    <div className="flex justify-between px-32 pt-10">
-        <div>
-            <h1 className="text-2xl ">Topic</h1>
-            <input className="border-2 border-gray-500 rounded-lg px-4 mt-2" type="Select" placeholder="selct" />
-        </div>
-
-        <div>
-            <h1 className="text-white">Categories</h1>
+        {/* Right Side */}
+        <div className="w-full lg:w-[50%] flex justify-center">
+            <img className="w-full max-w-[500px] h-auto md:h-[350px] rounded-lg" src={img1} alt="Live Events" />
         </div>
     </div>
 
-    <div>
-        <h1 className="text-3xl font-semibold pl-[730px]">Categories</h1>
 
-        <ul className="flex gap-10 pl-[730px] pt-10 font-semibold">
-            <li className=" hover:text-blue-500 hover:bg-gray-300 hover:rounded-lg">All</li>
-            <li className=" hover:text-blue-500 hover:bg-gray-300 hover:rounded-lg">WrokShop</li>
-            <li className=" hover:text-blue-500 hover:bg-gray-300 hover:rounded-lg">Tallka</li>
-            <li className=" hover:text-blue-500 hover:bg-gray-300 hover:rounded-lg">info Season</li>
-            <li className=" hover:text-blue-500 hover:bg-gray-300 hover:rounded-lg">Demo Day</li>
-        </ul>
 
-        <div className="border-2 border-black flex justify-between px-10 py-5 rounded-xl mt-5">
-            <div>
-                <img className="w-60 rounded-lg" src={img} alt="" />
+
+      <div className="mt-7 flex flex-wrap justify-between gap-6">
+        {/* Filters Section */}
+        <div className="w-full md:w-[30%] bg-white shadow-lg rounded-lg p-6">
+          <h2 className="text-xl font-bold mb-4">Filters</h2>
+
+          <div className="mb-6">
+            <h3 className="font-semibold mb-2">Topic</h3>
+            <select className="w-full p-2 border border-gray-300 rounded">
+              <option>Select</option>
+            </select>
+          </div>
+
+          <div className="mb-6">
+            <h3 className="font-semibold mb-2">Type</h3>
+            <div className="space-y-2">
+              {["All", "Online", "On-site", "Replay"].map((type, index) => (
+                <label key={index} className="flex items-center">
+                  <input type="radio" name="type" className="form-radio" defaultChecked={index === 0} />
+                  <span className="ml-2">{type}</span>
+                </label>
+              ))}
             </div>
+          </div>
 
-            <div>
-                <h1 className="font-semibold">info sesone</h1>
-                <h1>How to finance your bootcamp with an <br /> interest-free loan</h1>
-                <h1>Tue, February 4 • 12:00 pm <br /> (Europe/Amsterdam Time)</h1>
-                <h1>online</h1>
+          <div className="mb-6">
+            <h3 className="font-semibold mb-2">Language</h3>
+            <div className="space-y-2">
+              {["All", "English", "French", "Español - LA", "Spanish", "German"].map((lang, index) => (
+                <label key={index} className="flex items-center">
+                  <input type="radio" name="language" className="form-radio" defaultChecked={index === 0} />
+                  <span className="ml-2">{lang}</span>
+                </label>
+              ))}
             </div>
-
-            <div>
-                <button className="bg-blue-400  px-5 py-3 font-semibold text-white rounded-lg">Regester now</button>
-            </div>
-
+          </div>
         </div>
-        <div className="border-2 border-black flex justify-between px-10 py-5 mt-5 rounded-xl">
-            <div>
-                <img className="w-60 rounded-lg" src={img} alt="" />
-            </div>
 
-            <div>
-                <h1 className="font-semibold">info sesone</h1>
-                <h1>How to finance your bootcamp with an <br /> interest-free loan</h1>
-                <h1>Tue, February 4 • 12:00 pm <br /> (Europe/Amsterdam Time)</h1>
-                <h1>online</h1>
-            </div>
+        {/* Events Section */}
+        <div className="w-full md:w-[65%] bg-white">
+          <h1 className="text-3xl font-semibold">Events that match your search</h1>
+          <hr className="mt-7 border-gray-300" />
 
-            <div>
-                <button className="bg-blue-400  px-5 py-3 font-semibold text-white rounded-lg">Regester now</button>
-            </div>
+          <div className="mt-9">
+            <h1 className="font-semibold text-2xl">Categories</h1>
+            <ul className="flex flex-wrap gap-4 pt-6 px-5">
+              {["All", "Workshop", "Talk", "Info session", "Demo Day"].map((category, index) => (
+                <li key={index} className="cursor-pointer hover:text-blue-600">
+                  {category}
+                </li>
+              ))}
+            </ul>
+          </div>
 
+          {/* Events List */}
+          <div className="space-y-6 mt-9">
+            {[1, 2].map((event, index) => (
+              <div key={index} className="flex flex-col md:flex-row items-start md:items-center bg-white rounded-lg shadow-md p-4 w-full">
+                <img className="w-full md:w-1/3 h-40 object-cover rounded-lg" src={img1} alt="Event" />
+                <div className="md:ml-5 mt-3 md:mt-0 w-full">
+                  <h6 className="bg-gray-200 w-max px-3 py-1 rounded-lg text-blue-600 font-semibold">Workshop</h6>
+                  <h1 className="font-bold text-xl mt-2">How to finance your bootcamp with an interest-free loan</h1>
+                  <h2 className="text-red-500 font-semibold mt-1">Tue, February 4 • 12:00 pm (Europe/Amsterdam Time)</h2>
+                  <h6 className="mt-1">Online</h6>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="border-2 border-black flex justify-between px-10 py-5 mt-5 rounded-xl">
-            <div>
-                <img className="w-60 rounded-lg" src={img} alt="" />
-            </div>
-
-            <div>
-                <h1 className="font-semibold">info sesone</h1>
-                <h1>How to finance your bootcamp with an <br /> interest-free loan</h1>
-                <h1>Tue, February 4 • 12:00 pm <br /> (Europe/Amsterdam Time)</h1>
-                <h1>online</h1>
-            </div>
-
-            <div>
-                <button className="bg-blue-400  px-5 py-3 font-semibold text-white rounded-lg">Regester now</button>
-            </div>
-
-        </div>
-        <div className="border-2 border-black flex justify-between px-10 py-5 mt-5 rounded-xl">
-            <div>
-                <img className="w-60 rounded-lg" src={img} alt="" />
-            </div>
-
-            <div>
-                <h1 className="font-semibold">info sesone</h1>
-                <h1>How to finance your bootcamp with an <br /> interest-free loan</h1>
-                <h1>Tue, February 4 • 12:00 pm <br /> (Europe/Amsterdam Time)</h1>
-                <h1>online</h1>
-            </div>
-
-            <div>
-                <button className="bg-blue-400  px-5 py-3 font-semibold text-white rounded-lg">Regester now</button>
-            </div>
-
-        </div>
-        <div className="border-2 border-black flex justify-between px-10 py-5 mt-5 rounded-xl">
-            <div>
-                <img className="w-60 rounded-lg" src={img} alt="" />
-            </div>
-
-            <div>
-                <h1 className="font-semibold">info sesone</h1>
-                <h1>How to finance your bootcamp with an <br /> interest-free loan</h1>
-                <h1>Tue, February 4 • 12:00 pm <br /> (Europe/Amsterdam Time)</h1>
-                <h1>online</h1>
-            </div>
-
-            <div>
-                <button className="bg-blue-400 px-5 py-3 font-semibold text-white rounded-lg">Regester now</button>
-            </div>
-
-        </div>
-    </div>
-    <Footer />
+      </div>
+      <Footer />
     </>
-}
+  );
+};
 
-export default Next
+
+
+export default Next;
